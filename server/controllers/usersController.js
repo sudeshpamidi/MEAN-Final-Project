@@ -40,6 +40,16 @@ module.exports = {
                 }
             })
             .catch(error => res.status(400).send(error));
+    },
+    deleteUser(req, res, next) {
+        return userService.deleteUser(req.params.id)
+            .then(user => {
+                if (user) {
+                    res.status(200).send('User has been deleted');
+                } else
+                    res.status(400).send('Ooops.. Something went wrong');
+            })
+            .catch(error => res.status(400).send(error));
     }
 
 }
