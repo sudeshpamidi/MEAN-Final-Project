@@ -1,0 +1,36 @@
+<div class="card mb-3">
+    <div class="card-header">
+        <h2 class="h3 font-weight-bold">Users</h2>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="tableUsers">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Email</th>
+                        <th>Is Admin</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let user of userlist">
+                    <tr>
+                        <td>{{user.USER_NAME}}</td>
+                        <td>{{user.EMAIL}}</td>
+                        <td>{{user.IS_ADMIN}}</td>
+                        <td>
+                            <span>                         
+                                        <a class='edit mr-2' title='Edit' data-toggle='tooltip' href='' > <i class="fas fa-user-edit fa-lg"></i></a>
+                                        <a class="delete" title="Delete" data-userid='a' data-toggle="modal" data-target="#myModal">
+                                        <i class="fas fa-trash-alt fa-lg"></i>
+                                        </a>
+                                    </span>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
