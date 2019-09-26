@@ -12,6 +12,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+//services
+import { AuthService }  from './services/auth.service';
+
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent },
@@ -37,8 +42,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
