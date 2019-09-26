@@ -1,0 +1,15 @@
+    [{
+        "USER_NAME": "Admin",
+        "FIRST_NAME": "Adam",
+        "LAST_NAME": "Gilchrist",
+        "PASSWORD": "password",
+        "EMAIL": "Admin@gmail.com",
+        "IS_ADMIN": true
+    }, {
+        "USER_NAME": "Non Admin",
+        "FIRST_NAME": "Adam",
+        "LAST_NAME": "Gilchrist",
+        "PASSWORD": "password",
+        "EMAIL": "Admin@gmail.com",
+        "IS_ADMIN": false
+    }]
