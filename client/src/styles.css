@@ -1,1 +1,286 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+} */
+
+body {
+    margin: 0;
+    /* font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #858796;
+    text-align: left;
+    /* background-color: #fff; */
+    background-color: #eaecf4;
+}
+
+a {
+    color: #00B7FF;
+}
+
+#wrapper {
+    display: flex;
+}
+
+#wrapper #content-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 80px;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-toggle::after {
+    width: 1rem;
+    text-align: center;
+    float: right;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+}
+
+.navbar-nav .nav-item.dropdown.show .dropdown-toggle::after {
+    content: '\f107';
+}
+
+.navbar-nav .nav-item.dropdown.no-arrow .dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #fff;
+}
+
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -1.25rem;
+    right: -1rem;
+    opacity: 0.4;
+    font-size: 5rem;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+
+/* image card size */
+
+.image-card {
+    width: 900px;
+    height: 400px;
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.fade:hover {
+    opacity: 0.5;
+}
+
+.pe-hst-slidelabel {
+    position: relative;
+    top: 221px;
+    height: 79px;
+    background-image: url(/public/images/slidelabelbg.png);
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .15s box-shadow, .15s transform;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color .15s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.item-preview a.item-preview-img {
+    transition: .15s box-shadow, .15s transform;
+    border-radius: .5rem;
+    box-shadow: 0 2rem 1.5rem -1.5rem rgba(33, 37, 41, .15), 0 0 1.5rem 0.5rem rgba(33, 37, 41, .05);
+    overflow: hidden;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 46px;
+}
+
+.scroll-to-top:focus,
+.scroll-to-top:hover {
+    color: white;
+}
+
+.scroll-to-top:hover {
+    background: #343a40;
+}
+
+.scroll-to-top i {
+    font-weight: 800;
+}
+
+
+/********* table styles *************/
+
+table.table td a.save {
+    color: #27C46B;
+}
+
+table.table td a.add,
+table.table td a.cancel {
+    color: #27C46B;
+}
+
+table.table td a.view {
+    color: blue;
+}
+
+table.table td a.edit {
+    color: #FFC107;
+}
+
+table.table td a.delete {
+    color: #E34724;
+}
+
+table.table .form-control.error {
+    border-color: #f50000;
+}
+
+table.table td .add,
+table.table td .save,
+table.table td .cancel {
+    display: none;
+}
+
+
+/********* end  of table styles *************/
+
+.red,
+.error {
+    color: red;
+}
+
+
+/* .popover {
+  background: tomato;
+}
+
+.popover.bottom .arrow:after {
+  border-bottom-color: tomato;
+} */
+
+
+/* .jumbotron {
+    background-image: url(../images/soccer1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    /* rgb(18, 16, 27)rgb(28, 25, 44);*/
+
+
+/*   max-height: 300px;
+} */
+
+.card .card-header[data-toggle="collapse"] {
+    text-decoration: none;
+    position: relative;
+    padding: 0.75rem 3.25rem 0.75rem 1.25rem;
+}
+
+.card .card-header[data-toggle="collapse"]::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 1.725rem;
+    line-height: 51px;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    color: #d1d3e2;
+}
+
+.card .card-header[data-toggle="collapse"].collapsed {
+    border-radius: 0.35rem;
+}
+
+.card .card-header[data-toggle="collapse"].collapsed::after {
+    content: '\f105';
+}
+
+.card-login {
+    max-width: 25rem;
+}
+
+.card-register {
+    max-width: 40rem;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+#frmLogin .form-group {
+    position: relative;
+}
+
+#frmLogin .form-group i {
+    position: absolute;
+    left: 15px;
+    top: 11px;
+    font-size: 18px;
+}
+
+#frmLogin .form-group .form-control {
+    padding-left: 40px;
+}

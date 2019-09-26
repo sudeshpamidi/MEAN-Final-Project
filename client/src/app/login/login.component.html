@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+            <form id="frmLogin">
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" id="username" name="username" required="required" class="form-control" placeholder="User name/Email address" autofocus="autofocus" data-role="validate" data-content="Username/Email is required." [(ngModel)]="userName">
+                </div>
+                <div class="form-group">
+
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required" data-role="validate" data-content="Password is required." [(ngModel)]="passWord">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                    <input type="checkbox" value="remember-me" id="rememberMe">
+                    Remember Me
+                  </label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit" id="btnLogin" (click)="login()">Login</button>
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" routerLink="/register">Register an Account</a>
+            </div>
+            <div class="alert text-center">
+            </div>
+        </div>
+    </div>
+</div>
