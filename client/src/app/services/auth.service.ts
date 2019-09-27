@@ -10,12 +10,23 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
+  
+  private _isAuth: boolean = false;
+  get isAuth(): boolean {
+      return this._isAuth;
+  }
+  set isAuth(value: boolean) {
+      this._isAuth = value;
+  }
+
   private url: string = 'http://localhost:3000/users/login/';
 	private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
     })
   };
+
+
 
   constructor(private http : HttpClient) { }
     

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UsersService {
-  private url: string = 'http://localhost:3000/users/';
+  private urlEndpoint: string = 'http://localhost:3000/users/';
 	private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
@@ -18,7 +18,16 @@ export class UsersService {
   constructor(private http : HttpClient ) { }
 
   getUsers (): Observable<any> {
-    return this.http.get(this.url, this.httpOptions)
+  
+    return this.http.get(this.urlEndpoint, this.httpOptions)
             .pipe(map(res => <any>res));    
   }
+  
+  registerUser (user : any): Observable<any> {
+    let url  = this.urlEndpoint + "register"
+    return this.http.post(url, user, this.httpOptions)
+            .pipe(map(res => <any>res));    
+  }
+  
+
 }
