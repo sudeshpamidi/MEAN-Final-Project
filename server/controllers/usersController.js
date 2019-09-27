@@ -50,6 +50,18 @@ module.exports = {
                     res.status(400).send('Ooops.. Something went wrong');
             })
             .catch(error => res.status(400).send(error));
-    }
+    },
+
+    // update user controller
+    updateUser(req, res, next) {
+        return userService.updateUser({
+                id: req.params.id,
+                EMAIL: req.body.email,
+                // USER_NAME: req.body.username,
+                // IS_ADMIN: req.body.isadmin
+            })
+            .then(user => { res.send(user) })
+            .catch(error => res.status(400).send(error));
+    },
 
 }
