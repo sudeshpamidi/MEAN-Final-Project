@@ -21,6 +21,10 @@ usersService.authenticateUser = (oUser) => {
     return users
         .findOne({
             where: oUser
+                // where: {
+                //     PASSWORD: oUser.PASSWORD,
+                //     or: [{ EMAIL: oUser.EMAIL }, { USER_NAME: oUser.USER_NAME }]
+                // }
         })
         .then(user => {
             return user;

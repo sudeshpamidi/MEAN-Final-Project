@@ -36,7 +36,7 @@ module.exports = {
                     req.session.isadmin = user.IS_ADMIN;
                     res.json(user);
                 } else {
-                    res.json({ "error": "no user found" });
+                    res.json({ "error": "Incorrect User Name or Password." });
                 }
             })
             .catch(error => res.status(400).send(error));
