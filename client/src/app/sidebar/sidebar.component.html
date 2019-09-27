@@ -19,15 +19,15 @@
             <h6 class="dropdown-header">Login:</h6>
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout {{isAuthenticated}}</a>
-
-            <a class="dropdown-item" routerLink="login">Login</a>
-            <a class="dropdown-item" routerLink="register">Register</a>
-
+            <a class="dropdown-item" *ngIf="getAuth() else login" (click)="logout()">Logout </a>
+            <!--href="#" data-toggle="modal" data-target="#logoutModal"-->
+            <ng-template #login>
+                <a class="dropdown-item" routerLink="login">Login</a>
+                <a class="dropdown-item" routerLink="register">Register</a>
+            </ng-template>
         </div>
     </li>
-
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown" [class.d-none]="!getAdmin()">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user"></i>
             <span>Admin</span>
@@ -38,10 +38,29 @@
             <a class="dropdown-item" routerLink="users">List Users</a>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item ">
         <!-- Place holder for future-->
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-table"></i>
+        <a class="nav-link " href="# ">
+            <i class="fas fa-fw fa-table "></i>
             <span>Contacts</span></a>
     </li>
 </ul>
+
+<!-- Logout Modal-->
+<div class="modal " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
+    <div class="modal-dialog " role="document ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h5 class="modal-title " id="exampleModalLabel ">Ready to Leave?</h5>
+                <button class="close " type="button " data-dismiss="modal " aria-label="Close ">
+                    <span aria-hidden="true ">×</span>
+                  </button>
+            </div>
+            <div class="modal-body ">Select "Logout " below if you are ready to end your current session.</div>
+            <div class="modal-footer ">
+                <button class="btn btn-secondary " type="button " data-dismiss="modal ">Cancel</button>
+                <a class="btn btn-primary " id="btnLogout " (click)="logout();modal.close(); ">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>

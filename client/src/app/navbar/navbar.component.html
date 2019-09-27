@@ -19,10 +19,18 @@
                     Login                    
                 </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-                <a class="dropdown-item" routerLink="login">Login</a>
-                <a class="dropdown-item" routerLink="register">Register</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+
+                <div *ngIf="getAuth() else login">
+                    <a class="dropdown-item" (click)="logout()">Logout </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Your Profile</a>
+                </div>
+                <!--href="#" data-toggle="modal" data-target="#logoutModal"-->
+                <ng-template #login>
+                    <a class="dropdown-item" routerLink="login">Login</a>
+                    <a class="dropdown-item" routerLink="register">Register</a>
+                </ng-template>
+
             </div>
         </li>
     </ul>

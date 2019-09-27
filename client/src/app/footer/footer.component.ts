@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+
 //import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class FooterComponent implements OnInit {
   
-  constructor(private router: Router) { }  
+  constructor() { }  
   currentYear = 2019;
 
   //getting current year
@@ -21,8 +21,5 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
   
-  logout(){    
-    this.router.navigate (['login'])            
-  }
 }
 
