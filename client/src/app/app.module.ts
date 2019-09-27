@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //services
 import { AuthService }  from './services/auth.service';
+// import { UsersService }  from './services/users.service';
 
 
 const appRoutes: Routes = [
