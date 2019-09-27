@@ -13,20 +13,21 @@ export class LoginComponent implements OnInit {
 
   userName : string ;
   passWord : string ;  
-  
+  errorMessage : string;
 
   ngOnInit() {
   }
 
-  login():void {
-
+  login(loginForm):void {
+    if (loginForm.valid){
      this.authService.authenticate (this.userName, this.passWord )
          .subscribe(data => {
-            if (data['error']){
-              alert(data['error']) ; 
+            if (data['error']){                            
+              this.errorMessage = data['error'] ;              
             }
             else { this.router.navigate(['leagues']); }
         });
+    }
   }
 
 }
