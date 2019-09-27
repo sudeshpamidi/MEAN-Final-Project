@@ -35,4 +35,12 @@ usersService.deleteUser = (id) => {
         })
         .catch(error => { throw error; });
 };
+
+usersService.updateUser = (user) => {
+    return users.update(user, { returning: true, where: { id: user.id } })
+        .then(updatedUser => {
+            return updatedUser;
+        })
+        .catch(error => { throw error; });
+}
 module.exports = usersService;
