@@ -24,10 +24,12 @@ export class LoginComponent implements OnInit {
          .subscribe(data => {
             if (data['error']){                            
               this.authService.isAuth = false;
+              this.authService.isAdmin = false;
               this.errorMessage = data['error'] ;              
             }
             else { 
-              this.authService.isAuth = true;
+              this.authService.isAuth = true;              
+              this.authService.isAdmin = data['IS_ADMIN'];
               this.router.navigate(['leagues']); }
         });
     }
