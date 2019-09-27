@@ -11,7 +11,7 @@ usersService.createUser = (oUser) => {
 
 usersService.getUsers = () => {
     return users
-        .findAll()
+        .findAll({ where: { IS_ADMIN: false } })
         .then(users => {
             return users;
         })
