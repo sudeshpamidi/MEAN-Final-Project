@@ -23,9 +23,12 @@ export class LoginComponent implements OnInit {
      this.authService.authenticate (this.userName, this.passWord )
          .subscribe(data => {
             if (data['error']){                            
+              this.authService.isAuth = false;
               this.errorMessage = data['error'] ;              
             }
-            else { this.router.navigate(['leagues']); }
+            else { 
+              this.authService.isAuth = true;
+              this.router.navigate(['leagues']); }
         });
     }
   }
