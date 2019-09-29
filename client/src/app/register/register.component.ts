@@ -12,13 +12,16 @@ export class RegisterComponent implements OnInit {
  
   usersModel = new Users("", "","","","",false );
   errorMessage : string ;
+  confirmPassword: string;
 
   constructor(private usersService : UsersService, 
     private router : Router) { }
 
-  ngOnInit() {   
-    
+  ngOnInit() {       
   }
+ 
+  
+  
   registerUser():void {
     this.usersService.registerUser (this.usersModel)
     .subscribe(data => {        
@@ -27,6 +30,8 @@ export class RegisterComponent implements OnInit {
         }
         else {           
           this.router.navigate(['login']); }
-    });
+    },
+    error => this.errorMessage = error.statusText
+    );
   }
 }
