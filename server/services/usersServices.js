@@ -31,7 +31,6 @@ usersService.authenticateUser = (oUser) => {
         })
         .catch(error => { throw error; });
 };
-
 usersService.deleteUser = (id) => {
     return users.destroy({ returning: true, where: { id: id } })
         .then(user => {
