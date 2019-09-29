@@ -19,9 +19,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {       
   }
- 
-  
-  
+    
   registerUser():void {
     this.usersService.registerUser (this.usersModel)
     .subscribe(data => {        

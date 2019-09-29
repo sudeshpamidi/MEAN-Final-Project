@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //services
 import { AuthService }  from './services/auth.service';
+import { UserComponent } from './user/user.component';
 
 // import { UsersService }  from './services/users.service';
 
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   {path: 'leagues', component: LeaguesComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent },
+  {path: 'user/:id', component: UserComponent },
   {path: 'login', component: LoginComponent}
   // {path: 'logout', component: LoginComponent }
 ];
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     SidebarComponent,
     FooterComponent,
     UsersComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

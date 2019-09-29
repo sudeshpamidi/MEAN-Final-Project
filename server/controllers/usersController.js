@@ -24,6 +24,18 @@ module.exports = {
             })
             .catch(error => res.status(400).send(error));
     },
+    getUser(req, res, next) {
+        console.log('id :' + req.params.id);
+        return userService.getUser(req.params.id)
+            .then(user => {
+                if (user != null) {
+                    res.json(user);
+                } else {
+                    res.status(404).send("No user found");
+                }
+            })
+            .catch(error => res.status(400).send(error));
+    },
     authenticateUser(req, res, next) {
         return userService.authenticateUser({
                 USER_NAME: req.body.username,

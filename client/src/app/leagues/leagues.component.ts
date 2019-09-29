@@ -20,15 +20,13 @@ export class LeaguesComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated =this.getAuth() 
-    console.log ('Authenticated : ' + this.isAuthenticated);
-    console.log ('authService : ' + this.authService.isAuth);    
 
-    // if (!this.getAuth())
-    // {
-    //   this.router.navigate (['login']);
-    // }else{
+    if (!this.getAuth())
+    {
+       this.router.navigate (['login']);
+     }else{
       this.getLeagues();
-    // }
+     }
   }
 
   getAuth() : boolean {
