@@ -17,6 +17,14 @@ usersService.getUsers = () => {
         })
         .catch(error => { throw error; });
 };
+usersService.getUser = (id) => {
+    return users
+        .findOne({ where: { id: id } })
+        .then(user => {
+            return user;
+        })
+        .catch(error => { throw error; });
+};
 usersService.authenticateUser = (oUser) => {
     return users
         .findOne({
@@ -40,6 +48,7 @@ usersService.deleteUser = (id) => {
 };
 
 usersService.updateUser = (user) => {
+
     return users.update(user, { returning: true, where: { id: user.id } })
         .then(updatedUser => {
             return updatedUser;

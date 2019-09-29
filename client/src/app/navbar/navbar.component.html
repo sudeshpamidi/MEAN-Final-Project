@@ -34,7 +34,7 @@
                 <div *ngIf="getAuth() else login">
                     <a class="dropdown-item" (click)="logout()">Logout </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Your Profile</a>
+                    <a class="dropdown-item" routerLink="user/1">Your Profile</a>
                 </div>
                 <!--href="#" data-toggle="modal" data-target="#logoutModal"-->
                 <ng-template #login>

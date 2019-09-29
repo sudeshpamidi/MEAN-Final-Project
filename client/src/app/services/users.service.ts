@@ -42,4 +42,17 @@ export class UsersService {
     return this.http.delete(url, this.httpOptions)
             .pipe(map(res => <any>res));    
   }
+  
+  getUser(id : number):  Observable<any> {
+    let url  = this.urlEndpoint + id;
+    return this.http.get(url, this.httpOptions)
+            .pipe(map(res => <any>res));    
+  }
+
+  updateUser(id : number, user : any): Observable<any> {
+    let url  = this.urlEndpoint + id
+    console.log (url );
+    return this.http.put(url, user, this.httpOptions)
+            .pipe(map(res => <any>res));    
+  }
 }
