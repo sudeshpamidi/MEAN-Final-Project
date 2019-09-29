@@ -218,18 +218,15 @@ table.table td .cancel {
   border-bottom-color: tomato;
 } */
 
-
-/* .jumbotron {
-    background-image: url(../images/soccer1.jpg);
+.jumbotron {
+    background-image: url(../src/assets/images/soccer1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     color: white;
     /* rgb(18, 16, 27)rgb(28, 25, 44);*/
-
-
-/*   max-height: 300px;
-} */
+    max-height: 300px;
+}
 
 .card .card-header[data-toggle="collapse"] {
     text-decoration: none;

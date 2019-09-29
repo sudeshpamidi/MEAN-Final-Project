@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService }  from '../services/users.service';
 import {Users} from '../models/users';
 import {Router} from '@angular/router';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -13,7 +14,8 @@ export class UsersComponent implements OnInit {
   userlist: Users[] = [];
   errorMessage: string;
 
-  constructor(private usersService : UsersService, private router:Router ) { }
+  constructor(private usersService : UsersService, private router:Router,
+    private authService :AuthService ) { }
 
   ngOnInit() {
     this.getUsers();
@@ -41,4 +43,9 @@ export class UsersComponent implements OnInit {
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate(['users']);
   }  
+  getAuth() : boolean {
+    //this.isAuthenticated = this.authService.isAuth
+    return  this.authService.isAuth;    
+  }
+
 }
