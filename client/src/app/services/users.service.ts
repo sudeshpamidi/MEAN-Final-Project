@@ -23,11 +23,23 @@ export class UsersService {
             .pipe(map(res => <any>res));    
   }
   
+  /**
+   * Adding user by passing user model
+   * @param user - user model
+   */
   registerUser (user : any): Observable<any> {
     let url  = this.urlEndpoint + "register"
     return this.http.post(url, user, this.httpOptions)
             .pipe(map(res => <any>res));    
   }
-  
 
+  /**
+   * Deleting the user for given id
+   * @param id 
+   */
+  deleteUser(id : number) :  Observable<any> {
+    let url  = this.urlEndpoint + id;
+    return this.http.delete(url, this.httpOptions)
+            .pipe(map(res => <any>res));    
+  }
 }
