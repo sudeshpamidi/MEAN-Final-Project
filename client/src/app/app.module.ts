@@ -11,20 +11,20 @@ import { RegisterComponent } from './register/register.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
-
+import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
 //services
 import { AuthService }  from './services/auth.service';
+
 // import { UsersService }  from './services/users.service';
 
-
 const appRoutes: Routes = [
-  {path: '', component: LoginComponent },
-  {path: 'login', component: LoginComponent},  
+  {path: '', component: HomeComponent },  
   {path: 'leagues', component: LeaguesComponent },
   {path: 'register', component: RegisterComponent },
-  {path: 'users', component: UsersComponent }
+  {path: 'users', component: UsersComponent },
+  {path: 'login', component: LoginComponent}
   // {path: 'logout', component: LoginComponent }
 ];
 
@@ -37,7 +37,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     SidebarComponent,
     FooterComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
