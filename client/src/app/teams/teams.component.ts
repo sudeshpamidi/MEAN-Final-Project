@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService }  from '../services/team.service';
-import { UsersService }  from '../services/users.service';
+import { AuthService }  from '../services/auth.service';
+import {Router} from '@angular/router';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -30,15 +32,28 @@ export interface PeriodicElement {
 })
 
 export class TeamsComponent implements OnInit {
-  displayedColumns: string[] = ['USER_NAME'];  // , 'FIRST_NAME', 'LAST_NAME', 'EMAIL'
+  displayedColumns: string[] = ['teamname', 'maxteammembers', 'minage', 'maxage', 'managername', 'managerphone']; 
   dataSource = ELEMENT_DATA;
 
   
-  constructor(private teamService : TeamService ) { }
+  constructor(private teamService : TeamService,
+    private authService : AuthService,
+    private router : Router
+    ) { }
   teams: [] = [];
+  isAuthenticated : boolean = false;
 
   ngOnInit() {
-   this.getTeams();
+   
+   this.isAuthenticated =this.getAuth() 
+
+    if (!this.getAuth())
+    {
+       this.router.navigate (['login']);
+     }else{
+      this.getTeams();
+     }
+
   }
 
 
@@ -49,4 +64,9 @@ export class TeamsComponent implements OnInit {
       //console.log (this.teams);
     });
   }
+  getAuth() : boolean {
+    //this.isAuthenticated = this.authService.isAuth
+    return  this.authService.isAuth;    
+  }
+
 }

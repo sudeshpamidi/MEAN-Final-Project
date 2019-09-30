@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class TeamService {
 
-  private urlEndpoint: string = 'http://localhost:3000/users/';
+  private urlEndpoint: string = 'http://localhost:3000/teams/';
 	private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
