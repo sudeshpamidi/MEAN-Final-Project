@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
  
-  usersModel = new Users("", "","","","",false );
+  usersModel = new Users(0,"", "","","","",false );
   errorMessage : string ;
   confirmPassword: string;
 

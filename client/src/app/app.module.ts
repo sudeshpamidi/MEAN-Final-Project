@@ -27,7 +27,7 @@ const appRoutes: Routes = [
   {path: 'leagues', component: LeaguesComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent },
-  {path: 'user/:id', component: UserComponent },
+  {path: 'user', component: UserComponent },
   {path: 'login', component: LoginComponent},
   {path: 'teams', component: TeamsComponent}
   // {path: 'logout', component: LoginComponent }

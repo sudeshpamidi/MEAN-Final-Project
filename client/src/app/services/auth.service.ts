@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, Subject, of} from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Users} from '../models/users';
 
 
 @Injectable({
@@ -13,6 +13,7 @@ export class AuthService {
   
   private _isAuth: boolean = false;
   private _isAdmin: boolean = false;
+  private _user:Users;
 
   get isAuth(): boolean {
       return this._isAuth;
@@ -27,6 +28,15 @@ export class AuthService {
   set isAdmin(value: boolean) {
     this._isAdmin = value;
   }
+
+  get user() : Users {
+    return this._user ;
+  }
+
+  set user(value : Users)  {
+    this._user = value;
+  }
+
 
   private url: string = 'http://localhost:3000/users/login/';
 	private httpOptions = {

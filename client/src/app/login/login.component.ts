@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService }  from '../services/auth.service';
 import { Router } from '@angular/router';
+import {Users} from '../models/users';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,8 @@ export class LoginComponent implements OnInit {
   passWord : string ;  
   errorMessage : string;
   rememberMe : boolean = false;
+
+  user : Users 
 
 ngOnInit() {
   // on page load
@@ -47,6 +50,8 @@ login(loginForm):void {
             else { 
               this.authService.isAuth = true;              
               this.authService.isAdmin = data['IS_ADMIN'];
+              this.authService.user = new Users(data['id'], data['USER_NAME'],data['FIRST_NAME'],data['LAST_NAME'],data['EMAIL'],"",data['IS_ADMIN']);
+
               this.router.navigate(['leagues']); }
         });
     }
