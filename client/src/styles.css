@@ -281,3 +281,5 @@ table.table td .cancel {
 #frmLogin .form-group .form-control {
     padding-left: 40px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

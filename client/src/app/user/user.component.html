@@ -1,5 +1,5 @@
 <div class="card card-register mx-auto mt-5">
-    <div class="card-header">Users Profile</div>
+    <div class="card-header">User Profile</div>
     <div class="card-body">
         {{errorMessage}}
         <form id="frmRegister" novalidate (ngSubmit)="updateUser()">
@@ -12,7 +12,6 @@
                     <div *ngIf="username.errors && (username.invalid && username.touched)">
                         <small *ngIf="username.errors.required" class="text-danger">User Name is required.</small>
                     </div>
-
                 </div>
             </div>
             <div class="form-group">
@@ -72,7 +71,7 @@
             <div class="d-block text-center">
                 <button type="submit" class="btn btn-primary " id="btnEdit">Edit</button> &nbsp;
                 <!-- [disabled]="registerForm.form.invalid"-->
-                <button type="reset" class="btn btn-primary " id="btnReset">Reset</button>
+                <button type="button" class="btn btn-primary " id="btnReset" (click)="getUser()">Reset</button>
             </div>
 
         </form>

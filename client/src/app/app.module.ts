@@ -13,10 +13,12 @@ import { FooterComponent } from './footer/footer.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MaterialModule} from './material/material.module';
 //services
 import { AuthService }  from './services/auth.service';
 import { UserComponent } from './user/user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeamsComponent } from './teams/teams.component';
 
 // import { UsersService }  from './services/users.service';
 
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent },
   {path: 'user/:id', component: UserComponent },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'teams', component: TeamsComponent}
   // {path: 'logout', component: LoginComponent }
 ];
 
@@ -41,13 +44,16 @@ const appRoutes: Routes = [
     FooterComponent,
     UsersComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    TeamsComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
