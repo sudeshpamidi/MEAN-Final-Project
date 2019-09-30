@@ -1,0 +1,11 @@
+[{
+    "TEAM_NAME": "Team Holland",
+    "LEAGUE_ID": 1,
+    "MAX_TEAM_MEMBERS": 5,
+    "MIN_AGE": 50,
+    "MAX_AGE": 100,
+    "TEAM_GENDER": "Male",
+    "MANAGER_NAME": "Bill",
+    "MANAGER_PHONE": "123-456-7869",
+    "MANAGER_EMAIL": "Bill@gmail.com"
+}]
