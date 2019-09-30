@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService }  from '../services/team.service';
+import { UsersService }  from '../services/users.service';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -6,7 +8,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -19,6 +21,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
+
+
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
@@ -26,12 +30,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class TeamsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['USER_NAME'];  // , 'FIRST_NAME', 'LAST_NAME', 'EMAIL'
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  
+  constructor(private teamService : TeamService ) { }
+  teams: [] = [];
 
   ngOnInit() {
+   this.getTeams();
   }
 
+
+  getTeams() :void {
+    this.teamService.getUsers().subscribe(data => {
+      this.dataSource = data;
+      //this.teams = data;
+      //console.log (this.teams);
+    });
+  }
 }

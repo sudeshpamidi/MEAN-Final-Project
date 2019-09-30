@@ -20,7 +20,7 @@ import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamsComponent } from './teams/teams.component';
 
-// import { UsersService }  from './services/users.service';
+//import { TeamsService }  from './services/teams.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },  
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent },
   {path: 'user', component: UserComponent },
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent},  
   {path: 'teams', component: TeamsComponent}
   // {path: 'logout', component: LoginComponent }
 ];
