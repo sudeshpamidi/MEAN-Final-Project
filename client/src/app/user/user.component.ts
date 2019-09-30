@@ -22,8 +22,6 @@ export class UserComponent implements OnInit {
     this. getUser();
   }
   
-
-
   getUser():void {
     this.usersService.getUser(1).subscribe(data=> {
       this.userId = data["id"];

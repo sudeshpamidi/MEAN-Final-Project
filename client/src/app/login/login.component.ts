@@ -14,12 +14,32 @@ export class LoginComponent implements OnInit {
   userName : string ;
   passWord : string ;  
   errorMessage : string;
+  rememberMe : boolean = false;
 
-  ngOnInit() {
+ngOnInit() {
+  // on page load
+  if (this.localStorargeSupported() ) {
+    var persistedData = localStorage.getItem('persistedData');
+
+    if (persistedData !== null) {
+      var parsedData = JSON.parse(persistedData);
+      if (parsedData.rememberMe === true) {
+          this.userName = parsedData.userName;
+          this.rememberMe = parsedData.rememberMe;          
+      }
+    }
   }
+}
 
-  login(loginForm):void {
+login(loginForm):void {
     if (loginForm.valid){
+    
+    if (this.localStorargeSupported()) {
+      alert (this.rememberMe )  ;
+      localStorage.setItem('persistedData', JSON.stringify({ "userName": this.userName, "rememberMe": this.rememberMe }));
+    }
+
+
      this.authService.authenticate (this.userName, this.passWord )
          .subscribe(data => {
             if (data['error']){                            
@@ -33,6 +53,19 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['leagues']); }
         });
     }
+}
+
+
+      /**
+     * Check whether browser local storage supports
+     */
+    localStorargeSupported() : boolean {
+      if (typeof(Storage) !== "undefined") {
+          return true;
+      } else {
+          return false;
+      }
   }
 
+  
 }
