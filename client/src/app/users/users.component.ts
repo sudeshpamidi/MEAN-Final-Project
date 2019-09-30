@@ -14,20 +14,27 @@ export class UsersComponent implements OnInit {
   userlist: Users[] = [];
   errorMessage: string;
 
+  deleteUserId : number = 0;
+
   constructor(private usersService : UsersService, private router:Router,
     private authService :AuthService ) { }
 
   ngOnInit() {
     this.getUsers();
   }
-  
+
+  setDeleteuserId(id){
+    this.deleteUserId = id;    
+  }
+
   getUsers() :void {
     this.usersService.getUsers().subscribe(data => {
       this.userlist = data;})
   }
   
-  deleteUser(id): void {
-      // need to refactor 
+  deleteUser(): void {
+    let id = this.deleteUserId;    
+    // need to refactor 
       this.usersService.deleteUser(id).subscribe(
         data => {                 
          this.reloadUsers();         
