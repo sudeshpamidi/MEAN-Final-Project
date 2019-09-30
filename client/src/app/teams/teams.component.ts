@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamService }  from '../services/team.service';
+import { AuthService }  from '../services/auth.service';
+import {Router} from '@angular/router';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -6,7 +10,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -19,6 +23,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
+
+
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
@@ -26,12 +32,41 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class TeamsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['teamname', 'maxteammembers', 'minage', 'maxage', 'managername', 'managerphone']; 
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  
+  constructor(private teamService : TeamService,
+    private authService : AuthService,
+    private router : Router
+    ) { }
+  teams: [] = [];
+  isAuthenticated : boolean = false;
 
   ngOnInit() {
+   
+   this.isAuthenticated =this.getAuth() 
+
+    if (!this.getAuth())
+    {
+       this.router.navigate (['login']);
+     }else{
+      this.getTeams();
+     }
+
+  }
+
+
+  getTeams() :void {
+    this.teamService.getUsers().subscribe(data => {
+      this.dataSource = data;
+      //this.teams = data;
+      //console.log (this.teams);
+    });
+  }
+  getAuth() : boolean {
+    //this.isAuthenticated = this.authService.isAuth
+    return  this.authService.isAuth;    
   }
 
 }

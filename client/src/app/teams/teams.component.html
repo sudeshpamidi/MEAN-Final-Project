@@ -6,29 +6,38 @@
               The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <ng-container matColumnDef="teamname">
+        <th mat-header-cell *matHeaderCellDef> Team Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.TEAM_NAME}} </td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="maxteammembers">
+        <th mat-header-cell *matHeaderCellDef> Max Team Members </th>
+        <td mat-cell *matCellDef="let element"> {{element.MAX_TEAM_MEMBERS}} </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <!-- minage Column -->
+    <ng-container matColumnDef="minage">
+        <th mat-header-cell *matHeaderCellDef> Min. Age </th>
+        <td mat-cell *matCellDef="let element"> {{element.MIN_AGE}} </td>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="maxage">
+        <th mat-header-cell *matHeaderCellDef> Max. Age </th>
+        <td mat-cell *matCellDef="let element"> {{element.MAX_AGE}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="managername">
+        <th mat-header-cell *matHeaderCellDef> Manager Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.MANAGER_NAME}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="managerphone">
+        <th mat-header-cell *matHeaderCellDef> Manager Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.MANAGER_PHONE}} </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
