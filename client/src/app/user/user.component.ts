@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../models/users';
 import { UsersService }  from '../services/users.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
+import { AuthService }  from '../services/auth.service';
+
 
 @Component({
   selector: 'app-user',
@@ -10,35 +12,51 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 
-  usersModel = new Users("", "","","","",false );
+  usersModel : Users = new Users(0,"", "","","","",false ); 
   errorMessage : string ;
   confirmPassword: string;
   userId : number;
+  authUser : Users
 
   constructor(private usersService : UsersService, 
-    private router : Router) { }
+     private authService : AuthService ,
+     private router : Router) { }
 
-  ngOnInit() {       
-    this. getUser();
+  ngOnInit() {
+     if (!this.getAuth())
+     {
+        this.router.navigate (['login']);
+      }else{      
+       this.getUser();
+      }      
   }
   
-  getUser():void {
-    this.usersService.getUser(1).subscribe(data=> {
-      this.userId = data["id"];
-      this.usersModel = new Users(data["USER_NAME"], 
-      data["FIRST_NAME"],data["LAST_NAME"],data["EMAIL"],data["PASSWORD"],data["IS_ADMIN"]);
-     });
+  getUser():void {  
+      this.usersService.getUser(this.getAuthUser().id).subscribe(data=> {
+        this.userId = data["id"];
+        this.usersModel = new Users(data["id"], data["USER_NAME"], 
+        data["FIRST_NAME"],data["LAST_NAME"],data["EMAIL"],data["PASSWORD"],data["IS_ADMIN"]);
+       });
   }
-  updateUser():void{
-    console.log (this.usersModel );
-    console.log ("User Id " + this.userId);
-    this.usersService.updateUser(this.userId, this.usersModel).subscribe(
-      data => {
-        this.errorMessage = "User " + this.usersModel.firstname + ' ' + this.usersModel.lastname + ' has been updated.'
-      },
-      error =>{ console.log ( error.statusText)
-        this.errorMessage = error.statusText;
-      }
-    );
+   updateUser():void{
+     this.usersService.updateUser(this.userId, this.usersModel).subscribe(
+       data => {
+         this.errorMessage = "User " + this.usersModel.firstname + ' ' + this.usersModel.lastname + ' has been updated.'
+       },
+       error =>{ console.log ( error.statusText)
+         this.errorMessage = error.statusText;
+       }
+     );
   }
+
+   getAuthUser() : Users{
+     this.authUser = this.authService.user;
+     return this.authUser;
+   }
+
+  
+  getAuth() : boolean {    
+    return  this.authService.isAuth;    
+  }
+
 }
