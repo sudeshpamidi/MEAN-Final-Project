@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule,MatTableModule } from '@angular/material';
 
-const MaterialComponents = [MatButtonModule];
+const MaterialComponents = [MatButtonModule,
+                            MatTableModule];
 @NgModule({
   imports: [MaterialComponents],
   exports: [MaterialComponents]

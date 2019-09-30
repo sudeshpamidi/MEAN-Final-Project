@@ -1,10 +1,11 @@
 {{getAuth()}}
+<h2 class="h3 font-weight-bold">Leagues</h2>
 <div class="card shadow mt-4" *ngFor="let league of leagues; let i = index ">
     <img class="card-img-top" [src]="'assets/images/league' + i + '.jpg'">
     <div class="card-body">
         <h5 class="card-title">{{league.NAME}}</h5>
         <p class="card-text">{{league.DESCRIPTION}}</p>
-        <a class="btn btn-primary btn-sm" role="button" href="teams?leaguecode=${e.Code}">View Teams</a>
+        <a class="btn btn-primary btn-sm" role="button" routerLink="/teams">View Teams</a>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
 </div>

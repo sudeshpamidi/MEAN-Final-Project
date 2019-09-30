@@ -5,7 +5,7 @@
             <form id="frmLogin" #loginForm="ngForm">
                 <div class="form-group">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" id="username" name="username" #username="ngModel" [class.is-valid]="username.valid" required="required" class="form-control" placeholder="User name/Email address" data-role="validate" data-content="Username/Email is required." [(ngModel)]="userName">
+                    <input type="text" id="username" name="username" #username="ngModel" [class.is-valid]="username.valid" required class="form-control" placeholder="User name/Email address" [(ngModel)]="userName">
                     <!--autofocus="autofocus" -->
                     <small [class.d-none]="username.valid || username.untouched" class="text-danger">User Name is required</small>
                 </div>

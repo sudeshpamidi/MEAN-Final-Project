@@ -34,12 +34,9 @@ ngOnInit() {
 login(loginForm):void {
     if (loginForm.valid){
     
-    if (this.localStorargeSupported()) {
-      alert (this.rememberMe )  ;
-      localStorage.setItem('persistedData', JSON.stringify({ "userName": this.userName, "rememberMe": this.rememberMe }));
-    }
-
-
+      if (this.localStorargeSupported()) {      
+        localStorage.setItem('persistedData', JSON.stringify({ "userName": this.userName, "rememberMe": this.rememberMe }));
+      }
      this.authService.authenticate (this.userName, this.passWord )
          .subscribe(data => {
             if (data['error']){                            
@@ -55,17 +52,14 @@ login(loginForm):void {
     }
 }
 
-
-      /**
-     * Check whether browser local storage supports
-     */
-    localStorargeSupported() : boolean {
-      if (typeof(Storage) !== "undefined") {
-          return true;
-      } else {
-          return false;
-      }
-  }
-
-  
+  /**
+   * Check whether browser local storage supports
+   */
+  localStorargeSupported() : boolean {
+    if (typeof(Storage) !== "undefined") {
+      return true;
+    } else {
+      return false;
+    }
+  }  
 }
