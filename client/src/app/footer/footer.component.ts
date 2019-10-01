@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 //import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 
 @Component({
   selector: 'app-footer',
@@ -12,14 +10,13 @@ export class FooterComponent implements OnInit {
   
   constructor() { }  
   currentYear = 2019;
-
+  
   //getting current year
   getCurrentYear():number {
     return this.currentYear;
   }
 
   ngOnInit() {
-  }
-  
+  }  
 }
 

@@ -34,6 +34,10 @@ ngOnInit() {
   }
 }
 
+/**
+ * Authenticate the user and take him to leagues page
+ * @param loginForm 
+ */
 login(loginForm):void {
     if (loginForm.valid){
     

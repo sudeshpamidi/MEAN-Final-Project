@@ -17,10 +17,8 @@ export class TeamService {
 
   constructor(private http : HttpClient ) { }
 
-  getUsers (): Observable<any> {
-  
+  getUsers (): Observable<any> {  
     return this.http.get(this.urlEndpoint, this.httpOptions)
             .pipe(map(res => <any>res));    
   }
-
 }
