@@ -35,9 +35,9 @@
 
 ## Data Loading
 1.  In command terminal goto folder server/seeders and run follwoing 
-    - 1. $ node seed1
-    - 2. $ node seed2
-    - 3. $ node seed3
+    - 1. $ node seed_users
+    - 2. $ node seed_leagues
+    - 3. $ node seed_teams
 
 
 
