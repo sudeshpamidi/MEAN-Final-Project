@@ -3,7 +3,7 @@
 - To display list of site users, register and delete the users.
 - To display teams and leagues.
 
-![SoccerClub](client/assets/images/soccerclub.jpg "SoccerClub")
+![SoccerClub](client/src/assets/images/soccerclub.jpg "SoccerClub")
 
 ## Site Pages
 - Home page
