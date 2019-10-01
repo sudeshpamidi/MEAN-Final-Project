@@ -1,11 +1,45 @@
 [{
-    "TEAM_NAME": "Team Holland",
-    "LEAGUE_ID": 1,
-    "MAX_TEAM_MEMBERS": 5,
-    "MIN_AGE": 50,
-    "MAX_AGE": 100,
-    "TEAM_GENDER": "Male",
-    "MANAGER_NAME": "Bill",
-    "MANAGER_PHONE": "123-456-7869",
-    "MANAGER_EMAIL": "Bill@gmail.com"
-}]
+        "TEAM_NAME": "Team Holland",
+        "LEAGUE_ID": 1,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Male",
+        "MANAGER_NAME": "Bill",
+        "MANAGER_PHONE": "123-456-7869",
+        "MANAGER_EMAIL": "Bill@gmail.com"
+    },
+    {
+        "TEAM_NAME": "TEAM USA",
+        "LEAGUE_ID": 2,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Male",
+        "MANAGER_NAME": "Jim Craimer",
+        "MANAGER_PHONE": "123-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "TEAM Italy",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Jim Craimer",
+        "MANAGER_PHONE": "860-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "TEAM China",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Jim Craimer",
+        "MANAGER_PHONE": "860-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    }
+]

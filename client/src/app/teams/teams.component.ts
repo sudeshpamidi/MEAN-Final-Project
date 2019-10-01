@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort';
 import { TeamService }  from '../services/team.service';
 import { AuthService }  from '../services/auth.service';
 import {Router} from '@angular/router';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog,MatDialogConfig} from '@angular/material';
+import { TeamComponent } from '../team/team.component';
 
 export interface PeriodicElement {
   name: string;
@@ -10,20 +14,7 @@ export interface PeriodicElement {
   symbol: string;
 }
 
- const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
-
+ const ELEMENT_DATA = [];
 
 @Component({
   selector: 'app-teams',
@@ -31,42 +22,51 @@ export interface PeriodicElement {
   styleUrls: ['./teams.component.css']
 })
 
-export class TeamsComponent implements OnInit {
-  displayedColumns: string[] = ['teamname', 'maxteammembers', 'minage', 'maxage', 'managername', 'managerphone']; 
-  dataSource = ELEMENT_DATA;
+ export class TeamsComponent implements OnInit {
 
-  
   constructor(private teamService : TeamService,
     private authService : AuthService,
-    private router : Router
-    ) { }
-  teams: [] = [];
+    private router : Router,
+    private dialog : MatDialog
+    ) {}
+  
+  @ViewChild(MatSort, {static: false}) sort: MatSort;    
+  teams: MatTableDataSource<any> ;
+  displayedColumns: string[] = ['teamname','maxteammembers',  'minage', 'maxage','managername','managerphone', 'action'];
+  dataSource =new MatTableDataSource(ELEMENT_DATA) ;
+
+
   isAuthenticated : boolean = false;
 
   ngOnInit() {
-   
+     
    this.isAuthenticated =this.getAuth() 
 
-    if (!this.getAuth())
-    {
-       this.router.navigate (['login']);
-     }else{
+    // if (!this.getAuth())
+    // {
+    //    this.router.navigate (['login']);
+    //  }else{
       this.getTeams();
-     }
-
+    //  }
   }
-
-
   getTeams() :void {
-    this.teamService.getUsers().subscribe(data => {
-      this.dataSource = data;
-      //this.teams = data;
-      //console.log (this.teams);
+    this.teamService.getUsers().subscribe(data => {      
+      this.dataSource = data;      
+      this.teams = data;      
+      this.dataSource.sort = this.sort;
     });
   }
   getAuth() : boolean {
     //this.isAuthenticated = this.authService.isAuth
     return  this.authService.isAuth;    
+  }
+
+  onCreate(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width= "60%";
+    this.dialog.open(TeamComponent,dialogConfig);
   }
 
 }

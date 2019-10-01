@@ -1,42 +1,52 @@
 <!-- <button mat-button> Hello</button> -->
 <h2 class="h3 font-weight-bold">Teams</h2>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
+<div class="search-div">
+    <button mat-raised-button (click)="onCreate()"> 
+            <mat-icon>add</mat-icon>Create
+    </button>
+</div>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-    <!-- Position Column -->
     <ng-container matColumnDef="teamname">
-        <th mat-header-cell *matHeaderCellDef> Team Name </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Team Name </th>
         <td mat-cell *matCellDef="let element"> {{element.TEAM_NAME}} </td>
     </ng-container>
 
-    <!-- Name Column -->
+
     <ng-container matColumnDef="maxteammembers">
-        <th mat-header-cell *matHeaderCellDef> Max Team Members </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Max Team Members </th>
         <td mat-cell *matCellDef="let element"> {{element.MAX_TEAM_MEMBERS}} </td>
     </ng-container>
 
-    <!-- minage Column -->
+
     <ng-container matColumnDef="minage">
-        <th mat-header-cell *matHeaderCellDef> Min. Age </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Min. Age </th>
         <td mat-cell *matCellDef="let element"> {{element.MIN_AGE}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
+
     <ng-container matColumnDef="maxage">
-        <th mat-header-cell *matHeaderCellDef> Max. Age </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Max. Age </th>
         <td mat-cell *matCellDef="let element"> {{element.MAX_AGE}} </td>
     </ng-container>
 
     <ng-container matColumnDef="managername">
-        <th mat-header-cell *matHeaderCellDef> Manager Name </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Manager Name </th>
         <td mat-cell *matCellDef="let element"> {{element.MANAGER_NAME}} </td>
     </ng-container>
 
     <ng-container matColumnDef="managerphone">
-        <th mat-header-cell *matHeaderCellDef> Manager Phone </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Manager Phone </th>
         <td mat-cell *matCellDef="let element"> {{element.MANAGER_PHONE}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+            <button mat-icon-button><mat-icon>launch</mat-icon></button>
+            <button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+        </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
