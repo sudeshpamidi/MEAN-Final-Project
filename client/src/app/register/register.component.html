@@ -1,8 +1,6 @@
 <div class="card card-register mx-auto mt-5">
     <div class="card-header">Register an Account</div>
     <div class="card-body">
-        {{registerForm.valid}}
-
         <form id="frmRegister" #registerForm="ngForm" novalidate (ngSubmit)="registerUser()">
             <div class="form-group">
                 <div class="form-label-group">
