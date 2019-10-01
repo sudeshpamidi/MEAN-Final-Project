@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule }  from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { AuthService }  from './services/auth.service';
 import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamsComponent } from './teams/teams.component';
+import { TeamComponent } from './team/team.component';
 
 //import { TeamsService }  from './services/teams.service';
 
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
   {path: 'users', component: UsersComponent },
   {path: 'user', component: UserComponent },
   {path: 'login', component: LoginComponent},  
-  {path: 'teams', component: TeamsComponent}
+  {path: 'teams', component: TeamsComponent},
+  {path: 'team', component: TeamComponent}
   // {path: 'logout', component: LoginComponent }
 ];
 
@@ -45,17 +47,20 @@ const appRoutes: Routes = [
     UsersComponent,
     HomeComponent,
     UserComponent,
-    TeamsComponent    
+    TeamsComponent,
+    TeamComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [TeamComponent]
 })
 export class AppModule { }

@@ -1,0 +1,45 @@
+<div class="container">
+    <form class="example-form">
+        <mat-grid-list cols="2" rowHeight="6:1">
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Team Name" [value]="teamName">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Max. Team Members</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let count of counts" [value]="count">
+                            {{count}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Min. Age" [value]="0">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Max. Age" [value]="0">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Manager Name" [value]="0">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Manager Phone" [value]="0">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <button mat-raised-button (click)="onSave()">Save</button>
+
+    </form>
+</div>
