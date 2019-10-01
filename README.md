@@ -35,7 +35,10 @@
 
 ## Data Loading
 1.  In command terminal goto folder server/seeders and run follwoing 
-    - $ node seed
+    - 1. $ node seed1
+    - 2. $ node seed2
+    - 3. $ node seed3
+
 
 
 ## Additional Developer Information

@@ -17,7 +17,7 @@ export class TeamComponent implements OnInit {
     this.teamName = "USA";
   }
   onSave(){
-    alert ( this.teamName);
+    
   }
 
 }

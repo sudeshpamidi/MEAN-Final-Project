@@ -42,12 +42,12 @@ export interface PeriodicElement {
      
    this.isAuthenticated =this.getAuth() 
 
-    // if (!this.getAuth())
-    // {
-    //    this.router.navigate (['login']);
-    //  }else{
+    if (!this.getAuth())
+    {
+       this.router.navigate (['login']);
+     }else{
       this.getTeams();
-    //  }
+     }
   }
   getTeams() :void {
     this.teamService.getUsers().subscribe(data => {      
