@@ -20,6 +20,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {       
   }
     
+  /**
+   *  register the new user and take him to login page
+   */
   registerUser():void {
     this.usersService.registerUser (this.usersModel)
     .subscribe(data => {        

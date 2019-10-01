@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
     this.getAuth()
   }
 
+  /**
+   * get authentication status
+   */
   getAuth() : boolean {  
     return  this.authService.isAuth;    
   }

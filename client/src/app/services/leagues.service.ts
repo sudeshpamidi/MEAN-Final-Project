@@ -16,11 +16,8 @@ export class LeaguesService {
 
   constructor(private http : HttpClient ) { }
 
-  getLeagues (): Observable<any> {
-  
+  getLeagues (): Observable<any> {  
     return this.http.get(this.urlEndpoint, this.httpOptions)
             .pipe(map(res => <any>res));    
-  }
-  
-
+  }  
 }

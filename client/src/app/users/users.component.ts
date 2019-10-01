@@ -32,6 +32,9 @@ export class UsersComponent implements OnInit {
       this.userlist = data;})
   }
   
+  /**
+   *  Deletes the user and refreshed the data.
+   */
   deleteUser(): void {
     let id = this.deleteUserId;    
     // need to refactor 
@@ -45,14 +48,16 @@ export class UsersComponent implements OnInit {
         });       
   }
 
+  /**
+   * Supporting function to refresh the data
+   */
   reloadUsers() {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
     this.router.navigate(['users']);
   }  
-  getAuth() : boolean {
-    //this.isAuthenticated = this.authService.isAuth
+  
+  getAuth() : boolean {    
     return  this.authService.isAuth;    
   }
-
 }

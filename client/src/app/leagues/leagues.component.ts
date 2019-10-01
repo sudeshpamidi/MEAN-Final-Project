@@ -10,19 +10,19 @@ import {Router} from '@angular/router';
 })
 export class LeaguesComponent implements OnInit {
   
- 
   constructor(private authService : AuthService,
-    private leaguesService: LeaguesService,
-    private router: Router) { }
+      private leaguesService: LeaguesService,
+      private router: Router) { }
 
   isAuthenticated : boolean = false;
   leagues = [];
 
   ngOnInit() {
-    this.isAuthenticated =this.getAuth() 
-
-    if (!this.getAuth())
-    {
+    
+    // check user authentication
+    this.isAuthenticated =this.getAuth();
+    
+    if (!this.getAuth()){
        this.router.navigate (['login']);
      }else{
       this.getLeagues();
@@ -34,7 +34,9 @@ export class LeaguesComponent implements OnInit {
     return  this.authService.isAuth;    
   }
 
-
+  /**
+   * get all the leagues
+   */
   getLeagues() :void {
     this.leaguesService.getLeagues().subscribe(data => {
       this.leagues = data;
