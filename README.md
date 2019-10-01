@@ -25,6 +25,10 @@
     - Open chrome browser goto http://localhost:4200    
     - Client runs at http://localhost:4200
 
+4. Postman collection export file is available in folder server/postman
+
+5. location of SQL file : server/sql/sql.sql
+
 ## Postgres Setup - Tables Creation
 1. In command terminal goto folder server run following sequelize command
     - $ sequlize db:migrate
