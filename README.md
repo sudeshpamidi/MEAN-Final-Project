@@ -1,9 +1,9 @@
-# MEAN-Final-Project
+# MEAN_Final_Project
 - This is a MEAN project using Express, PostgreSQL, Angular, Angular Materials and ORM tool Sequelize.
 - To display list of site users, register and delete the users.
 - To display teams and leagues.
 
-![SoccerClub](src/assets/images/soccerclub.jpg "SoccerClub")
+![SoccerClub](client/assets/images/soccerclub.jpg "SoccerClub")
 
 ## Site Pages
 - Home page
@@ -89,7 +89,7 @@ MEAN_FINAL_Project
 
 Change the config.json which is located at config\config.json and modify the dabase details.
 
-![Database config](src/assets/images/config.jpg "Database config")
+![Database config](client/src/assets/images/config.jpg "Database config")
 
 ### Generating Model & Migrations
 
