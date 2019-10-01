@@ -35,7 +35,10 @@
 
 ## Data Loading
 1.  In command terminal goto folder server/seeders and run follwoing 
-    - $ node seed
+    - 1. $ node seed1
+    - 2. $ node seed2
+    - 3. $ node seed3
+
 
 
 ## Additional Developer Information
@@ -107,7 +110,7 @@ Run the following command
 ### Creating User Model
 $ sequelize model:create --name USERS --attributes USER_NAME:string,FIRST_NAME:string,LAST_NAME:string,PASSWORD:string,EMAIL:string,IS_ADMIN:boolean
 
-### Creating LEGUES Model
+### Creating LEAGUES Model
 $ sequelize model:create --name LEAGUES --attributes NAME:string,CODE:string,DESCRIPTION:string
 
 ### Creating TEAMS Model

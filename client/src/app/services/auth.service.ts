@@ -9,7 +9,6 @@ import {Users} from '../models/users';
   providedIn: 'root'
 })
 export class AuthService {
-
   
   private _isAuth: boolean = false;
   private _isAdmin: boolean = false;
@@ -32,11 +31,9 @@ export class AuthService {
   get user() : Users {
     return this._user ;
   }
-
   set user(value : Users)  {
     this._user = value;
   }
-
 
   private url: string = 'http://localhost:3000/users/login/';
 	private httpOptions = {
@@ -52,4 +49,9 @@ export class AuthService {
             .pipe(map(res => <any>res));    
   }
 
+  logout(): Observable<any> {
+    let _url: string = 'http://localhost:3000/logout/';
+    return this.http.get(_url, this.httpOptions)
+            .pipe(map(res => <any>res));    
+  }
 }

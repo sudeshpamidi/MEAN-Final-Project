@@ -25,7 +25,6 @@ module.exports = {
             .catch(error => res.status(400).send(error));
     },
     getUser(req, res, next) {
-        console.log('id :' + req.params.id);
         return userService.getUser(req.params.id)
             .then(user => {
                 if (user != null) {
@@ -74,6 +73,5 @@ module.exports = {
             })
             .then(user => { res.send(user) })
             .catch(error => res.status(400).send(error));
-    },
-
+    }
 }

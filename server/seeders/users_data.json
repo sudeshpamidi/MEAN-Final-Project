@@ -1,15 +1,80 @@
     [{
-        "USER_NAME": "Admin",
-        "FIRST_NAME": "Adam",
-        "LAST_NAME": "Gilchrist",
-        "PASSWORD": "password",
-        "EMAIL": "Admin@gmail.com",
-        "IS_ADMIN": true
-    }, {
-        "USER_NAME": "Non Admin",
-        "FIRST_NAME": "Adam",
-        "LAST_NAME": "Gilchrist",
-        "PASSWORD": "password",
-        "EMAIL": "Admin@gmail.com",
-        "IS_ADMIN": false
-    }]
+            "USER_NAME": "Admin",
+            "FIRST_NAME": "Adam",
+            "LAST_NAME": "Gilchrist",
+            "PASSWORD": "password",
+            "EMAIL": "Admin@gmail.com",
+            "IS_ADMIN": true
+        }, {
+            "USER_NAME": "NonAdmin",
+            "FIRST_NAME": "Adam",
+            "LAST_NAME": "Gilchrist",
+            "PASSWORD": "password",
+            "EMAIL": "Admin@gmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Randy",
+            "FIRST_NAME": "Randy",
+            "LAST_NAME": "Mcgine",
+            "PASSWORD": "password",
+            "EMAIL": "RandyMcgine@gmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Foo",
+            "FIRST_NAME": "Foo",
+            "LAST_NAME": "Bar",
+            "PASSWORD": "password",
+            "EMAIL": "FooBar@gmail.com",
+            "IS_ADMIN": true
+        },
+        {
+            "USER_NAME": "Vikash",
+            "FIRST_NAME": "Vikash",
+            "LAST_NAME": "Zha",
+            "PASSWORD": "password",
+            "EMAIL": "VikashZhar@gmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Mike",
+            "FIRST_NAME": "Mikhel",
+            "LAST_NAME": "Smith",
+            "PASSWORD": "password",
+            "EMAIL": "FooBar@gmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Dan",
+            "FIRST_NAME": "Dan",
+            "LAST_NAME": "Williams",
+            "PASSWORD": "password",
+            "EMAIL": "DanWilliams@gmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Sara",
+            "FIRST_NAME": "Sara",
+            "LAST_NAME": "Reco",
+            "PASSWORD": "password",
+            "EMAIL": "SaraReco@hotmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Frank",
+            "FIRST_NAME": "Frank",
+            "LAST_NAME": "Mezo",
+            "PASSWORD": "password",
+            "EMAIL": "FrankMezo@hotmail.com",
+            "IS_ADMIN": false
+        },
+        {
+            "USER_NAME": "Adam",
+            "FIRST_NAME": "Adam",
+            "LAST_NAME": "Sandler",
+            "PASSWORD": "password",
+            "EMAIL": "AdamSandler@hotmail.com",
+            "IS_ADMIN": false
+        }
+    ]

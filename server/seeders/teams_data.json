@@ -41,5 +41,72 @@
         "MANAGER_NAME": "Jim Craimer",
         "MANAGER_PHONE": "860-456-7869",
         "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "TEAM China",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Jim Craimer",
+        "MANAGER_PHONE": "860-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "France",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 11,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Jim Craimer",
+        "MANAGER_PHONE": "860-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "India",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Male",
+        "MANAGER_NAME": "Harry",
+        "MANAGER_PHONE": "800-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "S.Koria",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Wao Chook",
+        "MANAGER_PHONE": "801-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "Denmark",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Male",
+        "MANAGER_NAME": "Arthur",
+        "MANAGER_PHONE": "877-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
+    },
+    {
+        "TEAM_NAME": "Poland",
+        "LEAGUE_ID": 3,
+        "MAX_TEAM_MEMBERS": 5,
+        "MIN_AGE": 50,
+        "MAX_AGE": 100,
+        "TEAM_GENDER": "Female",
+        "MANAGER_NAME": "Frank",
+        "MANAGER_PHONE": "860-456-7869",
+        "MANAGER_EMAIL": "JimCraimer@gmail.com"
     }
+
 ]
