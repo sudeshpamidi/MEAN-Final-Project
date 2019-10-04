@@ -1,9 +1,9 @@
 <div class="container">
-    <form class="example-form">
+    <!-- <form class="example-form"> -->
         <mat-grid-list cols="2" rowHeight="6:1">
             <mat-grid-tile>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Team Name" [value]="teamName">
+                    <input matInput placeholder="Team Name" [(ngModel)] = "teamName"> <!--  [value]="teamName" -->
                 </mat-form-field>
             </mat-grid-tile>
 
@@ -40,6 +40,7 @@
             </mat-grid-tile>
         </mat-grid-list>
         <button mat-raised-button (click)="onSave()">Save</button>
+        <button mat-raised-button (click)="onCancel()">Cancel</button>
 
-    </form>
+    <!-- </form> -->
 </div>

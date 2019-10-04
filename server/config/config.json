@@ -1,6 +1,6 @@
 {
     "development": {
-        "username": "hca",
+        "username": "postgres",
         "password": "password",
         "database": "hca",
         "host": "127.0.0.1",
@@ -8,7 +8,7 @@
         "operatorsAliases": false
     },
     "test": {
-        "username": "hca",
+        "username": "postgres",
         "password": "password",
         "database": "hca",
         "host": "127.0.0.1",
@@ -16,7 +16,7 @@
         "operatorsAliases": false
     },
     "production": {
-        "username": "hca",
+        "username": "postgres",
         "password": "password",
         "database": "hca",
         "host": "127.0.0.1",

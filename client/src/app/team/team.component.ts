@@ -18,6 +18,12 @@ export class TeamComponent implements OnInit {
   }
   onSave(){
     // future enhancement
+    alert (this.teamName)
+    this.dialogRef.close()
   }
+  onCancel(){
+    this.dialogRef.close()
+  }
+
 
 }
