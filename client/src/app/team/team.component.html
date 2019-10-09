@@ -30,14 +30,15 @@
 
             <mat-grid-tile>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Manager Name" [value]="0">
+                    <input matInput placeholder="Manager Name"  [(ngModel)] = "managerName" [value]="managerName">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Manager Phone" [value]="0">
+                    <input matInput placeholder="Manager Email" [(ngModel)] = "managerEmail" [value]="managerEmail">
                 </mat-form-field>
             </mat-grid-tile>
+                    
         </mat-grid-list>
         <button mat-raised-button (click)="onSave()">Save</button>
         <button mat-raised-button (click)="onCancel()">Cancel</button>

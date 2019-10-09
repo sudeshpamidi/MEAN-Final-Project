@@ -61,20 +61,21 @@ export interface PeriodicElement {
     return  this.authService.isAuth;    
   }
 
-  openTeamModel(){
+  openTeamModel(row ){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.width= "60%";
-
+    dialogConfig.width= "80%";
+    dialogConfig.data = row ;//{dialogTitle: "title", dialogText: "text"};
+  
     this.dialog.open(TeamComponent,dialogConfig);
   }
-  onCreate(){
-    this.openTeamModel();
+  onCreate(row){
+    this.openTeamModel(row);
   }
 
-  onEdit(){
-    this.openTeamModel();
+  onEdit( row){
+    this.openTeamModel(row );
   }
   onClose(){
     this.dialog.closeAll()    
